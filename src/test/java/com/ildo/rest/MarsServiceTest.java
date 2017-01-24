@@ -1,4 +1,4 @@
-package com.ildo.rest.tests;
+package com.ildo.rest;
 
 import static org.junit.Assert.assertEquals;
 
