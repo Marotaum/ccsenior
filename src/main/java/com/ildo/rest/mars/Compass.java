@@ -4,16 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Compass {
-    private static final List<Character> COMPASS_SPOTS =
-            Arrays.asList('N', 'E', 'S', 'W');
-
-    public char getSibling(char point, char direction) {
-        return COMPASS_SPOTS
-                .get(fixOverlap(getNext(direction, indexOf(point))));
-    }
+    private static final List<Character> SPOTS = Arrays.asList('N', 'E', 'S', 'W');
 
     private int indexOf(char point) {
-        return COMPASS_SPOTS.indexOf(point);
+        return SPOTS.indexOf(point);
+    }
+
+    public char getSibling(char point, char direction) {
+        return SPOTS.get(fixOverlap(getNext(direction, indexOf(point))));
     }
 
     private int fixOverlap(int index) {
