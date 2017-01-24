@@ -14,6 +14,7 @@ public class MarsService {
 
     @Path("/{commands}")
     @GET
+    @POST
     public Response move(@Context final UriInfo ui,
                                   @DefaultValue("")
                                   @PathParam("commands") String commands) {
@@ -21,13 +22,13 @@ public class MarsService {
         MarsValidator marsValidator = new MarsValidator(commands);
 
         if ( !marsValidator.isCommandListValid() || !marsValidator.isFuturePositionValid() )
-            return Response.status(404).entity( "Bad Request" ).build();
+            return Response.status(400).build();
 
         Robot robot = new Robot(new Position(0, 0, 'N'));
-        if (robot.executeCommands( marsValidator.getCommandList()))
+        if (robot.executeCommands(marsValidator.getCommandList()))
             return Response.ok().entity( robot.getPosition().toString() ).build();
         else
-            return Response.status(404).entity( "Robot Execution Error" ).build();
+            return Response.status(400).entity( "Robot Execution Error" ).build();
 
     }
 
