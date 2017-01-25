@@ -13,7 +13,6 @@ import javax.ws.rs.core.UriInfo;
 public class MarsService {
 
     @Path("/{commands}")
-    @GET
     @POST
     public Response move(@Context final UriInfo ui,
                                   @DefaultValue("")
