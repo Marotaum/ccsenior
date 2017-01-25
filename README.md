@@ -32,6 +32,3 @@ About challenge:
                    L -> rotate left
 			         
 		ex: http://localhost:8080/RESTCCSenior/mars/MMMLR
-
-
-
