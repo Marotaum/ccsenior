@@ -24,7 +24,7 @@ public class MarsService {
         if ( !marsValidator.isCommandListValid() || !marsValidator.isFuturePositionValid() )
             return Response.status(400).build();
 
-        Robot robot = new Robot(new Position(0, 0, 'N'));
+        Robot robot = new Robot();
         if (robot.executeCommands(marsValidator.getCommandList()))
             return Response.ok().entity( robot.getPosition().toString() ).build();
         else

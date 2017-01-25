@@ -13,7 +13,7 @@ public class PositionTest {
 
     @Before
     public void init() {
-        position = new Position(0, 0, 'N');
+        position = new Position();
     }
 
     @Test

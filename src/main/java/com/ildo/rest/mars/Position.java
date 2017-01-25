@@ -1,16 +1,17 @@
 package com.ildo.rest.mars;
 
 public class Position {
-    private int x;
-    private int y;
-    private char direction;
-    private final Compass compass;
+    private int x = 0;
+    private int y = 0;
+    private char direction = 'N';
+    private final Compass compass = new Compass();
+
+    public Position() {}
 
     public Position(int x, int y, char direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.compass = new Compass();
     }
 
     public void update(char command) {

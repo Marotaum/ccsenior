@@ -9,11 +9,9 @@ import java.util.List;
  */
 public class Robot {
 
-    private Position position;
+    private Position position = new Position();
 
-    public Robot( Position position ){
-        this.position = position;
-    }
+    public Robot(){}
 
     public Position getPosition(){
         return this.position;
